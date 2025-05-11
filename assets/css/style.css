@@ -1,0 +1,787 @@
+body {
+    margin: 0; /* Pas de marge */
+    padding: 0; /* Pas de padding */
+    font-family: 'Inter', sans-serif; /* Police Inter */
+}
+
+.full-screen {
+    min-height: 100vh;     /* prend au moins toute la hauteur de l’écran */
+    display: flex;         /* permet de centrer le contenu */
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 20px;
+  }
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+/* ====== Navbar ====== */
+.navbar {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Conteneur pour centrer le contenu */
+.navbar .container {
+    max-width: 1460px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #7c3aed;
+    text-decoration: none;
+}
+
+.navbar-logo a {
+    color: #7c3aed; /* Couleur du logo */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+/* Menu principal */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-grow: 1;
+    justify-content: flex-end; /* Aligné à droite */
+}
+
+/* Liens du menu */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li a {
+    color: #374151;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+    color: #7c3aed;
+}
+
+/* Icône panier */
+.navbar-cart {
+    margin-left: 1rem;
+}
+
+.navbar-cart a {
+    font-size: 1.25rem;
+    color: #374151;
+    transition: color 0.3s ease;
+}
+
+.navbar-cart a:hover {
+    color: #7c3aed;
+}
+  
+.menu-toggle {
+    display: none; /* Caché par défaut (desktop) */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #374151;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  /* Responsive : menu toggle visible sur mobile */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block; /* Afficher sur mobile */
+    }
+    
+    .navbar-menu {
+      position: relative;
+    }
+    
+    .navbar-links {
+      position: absolute;
+      top: 60px; /* Ajuster selon la hauteur de ta navbar */
+      left: 0;
+      width: 100%;
+      background-color: #0f172a; /* Fond sombre */
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      display: none; /* Caché par défaut */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-radius: 12px; /* Coins arrondis */
+      margin: 0 auto; /* Centre le menu */
+    }
+    
+    .navbar-links.active {
+      display: flex; /* Affiché quand le menu est activé */
+    }
+    
+    .navbar-links li {
+      margin: 15px 0;
+    }
+    
+    .navbar-links li a {
+      color: #ffffff;
+      font-size: 1rem;
+    }
+    
+    .navbar-cart {
+      position: relative;
+      z-index: 1001;
+      /* Vous pouvez choisir de le garder visible ou non */
+    }
+  }
+/* ====== Section Hero ====== */
+
+.hero-section {
+    background: linear-gradient(to right, #f5f3ff, #f0fdf4); /* Dégradé violet pâle -> vert pâle */
+    padding: 4rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Conteneur central pour aligner et limiter la largeur */
+.container {
+    max-width: 1460px; /* Limite la largeur du conteneur */
+    margin: 0 auto; /* Centre le conteneur */
+    padding: 0 1rem; /* Ajoute un peu de padding */
+}
+
+/* Grille à 2 colonnes */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes de même largeur */
+    gap: 2rem; /* Espace entre les colonnes */
+    align-items: center; /* Centre verticalement le contenu */
+}
+
+/* Texte à gauche */
+.hero-text h1{
+    font-size: 2.5rem; /* Taille de police pour le titre */
+    color: #1f2937; /* Couleur du texte */
+    line-height: 1.2; /* Hauteur de ligne pour espacer les lignes */
+    font-weight: bold; /* Gras */
+}
+
+.hero-text .highlight {
+    color: #7c3aed; /* Couleur violet */
+}
+
+.hero-text p {
+    margin-top: 1rem; /* Espace au-dessus du paragraphe */
+    font-size: 1.125rem; /* Taille de police pour le paragraphe */
+    color: #4b5563; /* Couleur du textegris moyen */
+    max-width: 600px; /* Limite la largeur du paragraphe */
+}
+
+/* Boutons d’action */
+.hero-buttons {
+    margin-top: 2rem; /* Espace au-dessus des boutons */
+    display: flex; /* Affichage en flex pour aligner les boutons */
+    gap: 1rem; /* Espace entre les boutons */
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
+}
+
+.btn {
+    padding: 0.7rem 1.5rem; /* Padding pour les boutons */
+    font-size: 1rem; /* Taille de police pour les boutons */
+    border-radius: 45px; /* Coins arrondis */
+    text-decoration: none; /* Pas de soulignement */
+    font-weight: 600; /* Gras */
+    transition: all 0.3s ease; /* Transition pour les effets au survol */   
+}
+
+.btn-primary {
+    background-color: #7c3aed; /* Couleur violet */
+    color: #fff; /* Couleur du texte blanc */
+}
+
+.btn-primary:hover {
+    background-color: #ede9fe;
+    border: 2px solid #7c3aed; /* Bordure violette au survol */
+    color: #7c3aed; /* Couleur du texte violet */
+}
+
+/* Bouton secondaire (contour violet) */
+.btn-secondary {
+    border: 2px solid #7c3aed; /* Bordure violette */
+    color: #7c3aed; /* Couleur du texte violet */
+    background-color: #ede9fe; /* Fond blanc */
+}
+
+.btn-secondary:hover {
+    background-color: #7c3aed; /* Fond violet au survol */
+    color: #fff; /* Couleur du texte blanc */
+}
+
+/* Image à droite */
+.hero-image img{
+    max-width: 500px;
+    width: 100%; /* Prend toute la largeur de la colonne */
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: rotate(3deg); /* Légère rotation pour un effet dynamique */
+    transition: transform 0.3s ease; /* Transition pour l'effet de rotation */
+}
+
+.hero-image img:hover {
+    transform: rotate(0deg); /* Retour à la position normale au survol */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        text-align: center; /* Centre le texte */
+    }
+
+    .hero-text {
+        order: 2; /* Met le texte après l'image */
+    }
+
+    .hero-image {
+        order: 1; /* Met l'image avant le texte */
+    }
+}
+
+
+/* ====== Section Bénéfices (Features) ====== */
+
+.features-section {
+    background-color: #ffffff; /* Fond blanc */
+    padding: 4rem 1rem; /* Padding pour la section */
+}
+
+/* Titre centré */
+.features-section .section-title {
+    text-align: center; /* Centre le texte */
+    margin-bottom: 3rem; /* Espace en bas */
+    align-items: center; /* Centre verticalement */
+}
+.features-section .section-title h2 {
+    font-size: 2rem; /* Taille de police pour le titre */
+    color: #1f2937; /* Couleur du texte gris foncé */
+    font-weight: bold; /* Gras */
+}
+
+.features-section .section-title p {
+    font-size: 1.125rem; /* Taille de police pour la description */
+    color: #4b5563; /* Couleur du texte gris moyen */
+    max-width: 700px; /* Limite la largeur de la description */
+    margin: 0 auto; /* Centre la description */
+}
+
+.features-section .container {
+    max-width: 1460px; /* Limite la largeur du conteneur */
+    margin: 0 auto; /* Centre le conteneur */
+    padding: 0 1rem; /* Ajoute un peu de padding */
+}
+
+/* Grille des cartes de bénéfices */
+.features-section .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px; /* Limite la largeur */
+    margin: 0 auto; /* Centre la grille */
+    padding: 0 1rem; /* Un padding pour mieux aligner */
+}
+
+/* Carte individuelle */
+.features-card {
+    background-color: #f9fafb; /* Fond gris clair */
+    border-radius: 12px; /* Coins arrondis */
+    padding: 2rem; /* Padding pour le contenu */
+    text-align: center; /* Centre le texte */
+    transition: transform 0.3s ease; /* Transition pour l'effet de survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03); /* Ombre */
+    margin: 0 auto; /* Centre la carte */
+    
+}
+
+.features-card:hover {
+    transform: translateY(-5px); /* Légère translation vers le haut au survol */
+}
+
+/* Icône (emoji ou image) */
+.features-icon {
+    font-size: 2rem; /* Taille de police pour l'icône */
+    background-color: #ede9fe; /* Fond violet pâle */
+    color: #7c3aed; /* Couleur violet */
+    width: 48px; /* Largeur de l'icône */
+    height: 48px; /* Hauteur de l'icône */
+    display: flex; /* Affichage en flex */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    margin: 0 auto 1rem auto; /* Centre l'icône et espace en bas */
+    border-radius: 50%; /* Arrondi complet */
+}
+
+/* Titre et texte */
+.features-card h3 {
+    font-size: 1.125rem; /* Taille de police pour le titre */
+    font-weight: 600; /* Gras */
+    margin-bottom: 0.5rem; /* Espace en bas */
+    color: #1f2937; /* Couleur du texte gris foncé */
+}
+
+.features-card p {
+    font-size: 0.9rem; /* Taille de police pour le texte */
+    color: #4b5563; /* Couleur du texte gris moyen */
+}
+
+
+
+/* ====== Section Produits ====== */
+
+.product-section {
+    background-color: #f9fafb; /* Couleur de fond gris clair */
+    padding: 4rem 1rem; /* Padding pour la section */
+}
+
+/* Titre et description centrés */
+.section-title {
+    text-align: center; /* Centre le texte */
+    margin-bottom: 3rem; /* Espace en bas */
+}
+
+.section-title h2 {
+    font-size: 2rem; /* Taille de police pour le titre */
+    color: #1f2937; /* Couleur du texte gris foncé */
+    font-weight: bold; /* Gras */
+}
+
+.section-title p {
+    font-size: 1.125rem; /* Taille de police pour la description */
+    color: #4b5563; /* Couleur du texte gris moyen */
+    max-width: 700px; /* Limite la largeur de la description */
+    margin: 0 auto; /* Centre la description */
+}
+
+/* Grille de produits responsive */
+.product-section .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1200px; /* Limite la largeur */
+    margin: 0 auto; /* Centre la grille */
+    padding: 0 1rem; /* Un padding pour mieux aligner */
+}
+
+/* Carte produit */
+.product-card {
+    background-color: #ffffff; /* Fond blanc */
+    border-radius: 12px; /* Coins arrondis */
+    overflow: hidden; /* Cache le débordement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* Ombre */
+    transition: transform 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+/* Image du produit */
+.product-image {
+    position: relative; /* Position relative pour le badge */
+    height: 200px; /* Hauteur de l'image */
+    overflow: hidden; /* Cache le débordement */
+    border-radius: 12px 12px 0 0; /* Coins arrondis en haut */
+}
+
+.product-image img {
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    object-fit: cover; /* Couvre l'espace sans déformer l'image */
+}
+
+/* Badge Best-seller */
+.badge {
+    position: absolute; /* Position absolue pour le badge */
+    top: 10px; /* Position en haut */
+    right: 10px; /* Position à droite */
+    background-color: #10b981; /* Couleur verte menthe*/
+    color: #ffffff; /* Couleur du texte blanc */
+    font-size: 0.75rem; /* Taille de police pour le badge */
+    padding: 0.25rem 0.5rem; /* Padding pour le badge */
+    border-radius: 999px; /* Coins arrondis */
+}
+
+/* Infos sous l’image */
+.product-info {
+    padding: 1rem; /* Padding pour le contenu */
+    text-align: center; /* Centre le texte */
+}
+
+.product-info h3 {
+    font-size: 1.125rem; /* Taille de police pour le titre */
+    font-weight: 600; /* Gras */
+    color: #1f2937; /* Couleur du texte gris foncé */
+    margin-bottom: 0.5rem; /* Espace en bas */
+}
+
+.product-info .price {
+    font-size: 1rem; /* Taille de police pour le prix */
+    color: #7c3aed; /* Couleur violet */
+    margin-bottom: 1rem; /* Espace en bas */
+}
+
+/* Bouton */
+.btn {
+    display: inline-block; /* Affichage en bloc pour le bouton */
+    padding: 0.5rem 1.25rem; /* Padding pour le bouton */
+}
+
+
+/* ====== Section Témoignages ====== */
+
+.testimonial-section {
+    background-color: #ffffff; /* Fond blanc */
+    padding: 4rem 1rem; /* Padding pour la section */
+}
+
+/* Titre et description centrés */
+
+/* Titre centré */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f2937; /* Gris foncé */
+  }
+  
+  .section-title p {
+    font-size: 1.125rem;
+    color: #4b5563; /* Gris moyen */
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+/* Carte de témoignages */
+.testimonial-card {
+    max-width: 700px; /* Limite la largeur de la carte */
+    margin: 0 auto; /* Centre la carte */
+    background-color: #f9fafb; /* Fond gris clair */
+    padding: 2rem; /* Padding pour le contenu */
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Ombre */
+    text-align: center; /* Centre le texte */
+    position: relative; /* Position relative pour le badge */
+}
+
+/* Icône de citation */
+.quote-icon {
+    font-size: 2rem; /* Taille de police pour l'icône */
+    background-color: #ede9fe; /* Fond violet pâle */
+    color: #7c3aed; /* Couleur violet */
+    width: 48px; /* Largeur de l'icône */
+    height: 48px; /* Hauteur de l'icône */
+    display: flex; /* Affichage en flex */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    margin: 0 auto 1rem auto; /* Centre l'icône et espace en bas */
+    border-radius: 50%; /* Arrondi complet */
+}
+
+/* Texte du témoignage */
+.testimonial-text {
+    font-style: italic; /* Italique */
+    color: #374151; /* Couleur gris foncé */
+    font-size: 1.125rem; /* Taille de police pour le texte */
+    margin-bottom: 2rem; /* Espace en bas */
+}
+
+/* Infos de l’auteur */
+.testimonial-author {
+    display: flex; /* Affichage en flex */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    gap: 1rem; /* Espace entre l'image et le texte */ 
+}
+
+.testimonial-author img {
+    width: 50px; /* Largeur de l'image */
+    height: 50px; /* Hauteur de l'image */
+    border-radius: 50%; /* Arrondi complet */
+    object-fit: cover; /* Couvre l'espace sans déformer l'image */
+    
+}
+
+.testimonial-author div {
+    text-align: left; /* Aligne le texte à gauche */
+    font-size: 0.95rem; /* Taille de police pour le nom */
+    color: #1f2937; /* Couleur gris foncé */
+}
+
+
+
+/* ====== Section Blog ====== */
+.blog-section {
+    background-color: #f9fafb;
+    padding: 4rem 1rem;
+  }
+
+/* Grille des articles */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+/* Carte d'article */
+.blog-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+
+.blog-card:hover {
+    transform: scale(1.03);
+}
+
+/* Image de l'article */
+.blog-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Infos sous l’image */
+.blog-content {
+    padding: 1.25rem;
+}
+
+.blog-date {
+    font-size: 0.875rem; /* Taille de police pour la date */
+    color: #6b7280; /* Couleur gris */
+    display: block; /* Affichage en bloc */
+    margin-bottom: 0.5rem; /* Espace en bas */
+}
+
+.blog-content h3 {
+    font-size: 1.125rem; /* Taille de police pour le titre */
+    font-weight: 600; /* Gras */
+    color: #1f2937; /* Couleur gris foncé */
+    margin-bottom: 0.5rem; /* Espace en bas */
+}
+
+.blog-content p {
+    font-size: 0.95rem; /* Taille de police pour le texte */
+    color: #4b5563; /* Couleur gris moyen */
+    margin-bottom: 1rem; /* Espace en bas */
+}
+
+/* Lien “Lire plus” */
+.read-more {
+    color: #7c3aed; /* Couleur violet */
+    font-weight: 600; /* Gras */
+    text-decoration: none; /* Pas de soulignement */
+    transition: color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.read-more:hover {
+    color: #6d28d9;
+}
+
+
+/* ====== Section Newsletter ====== */
+.newsletter-section {
+    background-color: #7c3aed; /* Couleur violet */
+    color: #ffffff; /* Couleur du texte blanc */
+    padding: 4rem 1rem; /* Padding pour la section */
+    text-align: center; /* Centre le texte */
+}
+
+/* Conteneur principal */
+.newsletter-card  {
+    max-width: 600px; /* Limite la largeur de la carte */
+    margin : 0 auto; /* Centre la carte */
+}
+
+/* Icône en haut */
+.newsletter-icon {
+    font-size: 2rem; /* Taille de police pour l'icône */
+    background-color: #6d28d9;
+    display: inline-flex; /* Affichage en flex */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    width: 48px; /* Largeur de l'icône */
+    height: 48px; /* Hauteur de l'icône */
+    border-radius: 50%; /* Arrondi complet */
+    margin-bottom: 1rem; /* Espace en bas */
+}
+
+/* Titre */
+.newsletter-card h2 {
+    font-size: 2rem; /* Taille de police pour le titre */
+    font-weight: bold; /* Gras */
+    margin-bottom: 1rem; /* Espace en bas */
+}
+
+/* Texte d’intro */
+.newsletter-card p {
+    font-size: 1rem; /* Taille de police pour le texte */
+    color: #ffe0ee; /* Couleur gris clair */
+    margin-bottom: 2rem; /* Espace en bas */
+}
+
+/* Formulaire */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    width: 30%;
+    color: #1f2937;
+    margin: 0 auto; /* Centre le champ */
+}
+
+.newsletter-form button {
+    background-color: #10b981;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20%;
+    margin: 0 auto; /* Centre le bouton */
+}
+
+.newsletter-from button:hover {
+    background-color: #059669; /* Couleur verte au survol */
+}
+
+/* Responsive : bouton et champ en ligne sur écrans larges */
+@media (min-width: 640px) {
+    .newsletter-from {
+        flex-direction: row; /* Affichage en ligne */
+    }
+
+    .newsletter-from input[type="email"] {
+        flex: 1; /* Prend toute la largeur */
+    }
+}
+
+
+/* ====== Footer ====== */
+
+.footer {
+    background-color: #f3f4f6; /* Couleur gris clair */
+    padding: 4rem 1rem; /* Padding pour la section */
+    color: #374151; /* Couleur gris foncé */
+}
+
+
+/* Conteneur principal */
+.footer .container {
+    max-width: 1200px; /* Limite la largeur du conteneur */
+    margin: 0 auto; /* Centre le conteneur */
+}
+
+/* Grille du footer */
+.footer-grid {
+    display: grid; /* Affichage en grille */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grille responsive */
+    gap: 2rem; /* Espace entre les colonnes */
+}
+
+/* Colonne marque/logo */
+.footer-brand .logo{
+    font-size: 1.5rem; /* Taille de police pour le logo */
+    font-weight: bold; /* Gras */
+    color: #7c3aed; /* Couleur violet */
+    margin-bottom: 1rem; /* Espace en bas */
+}
+
+.footer-brand p {
+    font-size: 0.95rem; /* Taille de police pour le texte */
+    color: #6b7280; /* Couleur gris */
+    margin-bottom: 1rem; /* Espace en bas */
+}
+
+
+/* Réseaux sociaux */
+.social-links {
+    display: flex; /* Affichage en flex */
+    gap: 1rem; /* Espace entre les icônes */
+}
+
+.social-links a img {
+    width: 20px; /* Largeur de l'icône */
+    height: 20px; /* Hauteur de l'icône */
+    filter: grayscale(100%); /* Grayscale */
+    transition: filter 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.social-links a:hover img {
+    filter: grayscale(0%); /* Retire le grayscale au survol */
+}
+
+/* Autres colonnes */
+.footer-col h3{
+    font-size: 1rem; /* Taille de police pour le titre */
+    font-weight: 600; /* Gras */
+    margin-bottom: 1rem; /* Espace en bas */
+    color: #1f2937; /* Couleur gris foncé */
+}
+
+.footer-col ul {
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem; /* Espace en bas */
+}
+
+.footer-col ul li a {
+    color: #6b7280; /* Couleur gris */
+    text-decoration: none; /* Pas de soulignement */
+    font-size: 0.95rem; /* Taille de police pour le lien */
+    transition: color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.footer-col ul li a:hover {
+    color: #7c3aed; /* Couleur violet au survol */
+}
+
+/* Bas du footer */
+.footer-botton {
+    text-align: center; /* Centre le texte */
+    border-top: 1px solid #e5e7eb; /* Bordure en haut */
+    padding-top: 1.5rem; /* Espace en haut */
+    font-size: 0.875rem; /* Taille de police pour le texte */
+    color: #6b7280; /* Couleur gris */
+}
