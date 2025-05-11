@@ -261,10 +261,13 @@
                 <div class="newsletter-icon"><i class="fas fa-envelope"></i></div>
                 <h2>Reste organisé(e) & inspiré(e)</h2>
                 <p>Inscris-toi à notre newsletter pour recevoir des conseils, des réductions exclusives et nos nouveautés.</p>
-                <form action="" class="newsletter-form">
-                    <input type="email" placeholder="Ton adresse e-mail" required>
+                <form  onsubmit="submitForm(event)" class="newsletter-form" id="newsletter-form">
+                    <input type="email" name="email" placeholder="Ton adresse e-mail" required>
                     <button type="submit">S'inscrire</button>
                 </form>
+
+                <!-- Zone où le message de confirmation s'affichera -->
+                <div id="confirmation-message" style="display: none; margin-top: 1rem; color: white;"></div>
             </div>
         </div>
      </section>
@@ -279,10 +282,10 @@
                     <div class="logo"><i class="fas fa-book"></i> Mwoibaco</div>
                     <p>Des planners numériques élégants pour étudiants, professionnels et entrepreneurs.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/mwoi_baco/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.tiktok.com/@mwoibaco?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
                     </div>
                  </div>
 
@@ -357,6 +360,36 @@
                 });
             }
         });
+
+        function submitForm(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+        
+            const form = document.getElementById('newsletter-form');
+            const formData = new FormData(form);
+            const email = formData.get('email');
+            const confirmationMessage = document.getElementById('confirmation-message');
+        
+            // URL de ton script Google Apps
+            const scriptURL = "https://script.google.com/macros/s/AKfycbxXOediN4lJSPuzFzQuxtQAcAb1FUtuEWbEOiv5xMgRGi7ombxg0Y3qrFHhYt3MAIO4SQ/exec";
+        
+            // Envoyer l'email via Fetch API
+            fetch(scriptURL, {
+                method: "POST",
+                body: new URLSearchParams({ email: email })
+            })
+            .then(response => {
+                confirmationMessage.textContent = "Merci pour votre inscription !";
+                confirmationMessage.style.display = "block";
+                form.reset();
+            })
+            .catch(error => {
+                confirmationMessage.textContent = "Erreur lors de l'inscription. Réessayez.";
+                confirmationMessage.style.display = "block";
+                confirmationMessage.style.color = "red";
+            });
+        }
+
+        
      </script>
 </body>
 </html>
