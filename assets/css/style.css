@@ -716,13 +716,13 @@ body {
 
     .newsletter-from input[type="email"] {
         width: 80%;
-        max-width: none;
+        margin: 0 auto; /* Centre le champ */
         margin-bottom: 1rem;
     }
 
     .newsletter-form button {
         width: 20%;
-        max-width: none;
+        margin: 0 auto; /* Centre le bouton */
     }
 }
 
