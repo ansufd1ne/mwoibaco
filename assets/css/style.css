@@ -145,43 +145,8 @@ body {
       /* Vous pouvez choisir de le garder visible ou non */
     }
 
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
+ 
 
-    .hero-text {
-        max-width: 100%;
-        margin-bottom: 2rem;
-    }
-
-    .hero-image img {
-        max-width: 300px; /* Taille de l'image réduite sur mobile */
-        margin: 0 auto;
-    }
-
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .newsletter-input {
-        width: 90%;
-        max-width: none;
-        margin-bottom: 1rem;
-    }
-
-    .newsletter-button {
-        width: 90%;
-        max-width: none;
-    }
   }
 /* ====== Section Hero ====== */
 
@@ -204,16 +169,17 @@ body {
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Deux colonnes de même largeur */
-    gap: 2rem; /* Espace entre les colonnes */
+    gap: 3rem; /* Espace entre les colonnes */
     align-items: center; /* Centre verticalement le contenu */
 }
 
 /* Texte à gauche */
 .hero-text h1{
-    font-size: 2.5rem; /* Taille de police pour le titre */
+    font-size: 3.5rem; /* Taille de police pour le titre */
     color: #1f2937; /* Couleur du texte */
     line-height: 1.2; /* Hauteur de ligne pour espacer les lignes */
     font-weight: bold; /* Gras */
+    max-width: 600px; /* Limite la largeur du titre */
 }
 
 .hero-text .highlight {
@@ -275,6 +241,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     transform: rotate(3deg); /* Légère rotation pour un effet dynamique */
     transition: transform 0.3s ease; /* Transition pour l'effet de rotation */
+    height: auto; /* Hauteur automatique pour garder le ratio */
 }
 
 .hero-image img:hover {
@@ -284,17 +251,26 @@ body {
 
 /* Responsive pour mobiles */
 @media (max-width: 768px) {
-    .hero-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        text-align: center; /* Centre le texte */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
     }
 
     .hero-text {
-        order: 2; /* Met le texte après l'image */
+        max-width: 100%;
+        margin-bottom: 2rem;
     }
 
-    .hero-image {
-        order: 1; /* Met l'image avant le texte */
+    .hero-image img {
+        max-width: 300px; /* Taille de l'image réduite sur mobile */
+        margin: 0 auto;
+    }
+
+    .hero-text a {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
     }
 }
 
@@ -729,6 +705,24 @@ body {
 
     .newsletter-from input[type="email"] {
         flex: 1; /* Prend toute la largeur */
+    }
+}
+
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter-from input[type="email"] {
+        width: 80%;
+        max-width: none;
+        margin-bottom: 1rem;
+    }
+
+    .newsletter-form button {
+        width: 20%;
+        max-width: none;
     }
 }
 
