@@ -27,3 +27,36 @@ mwoibaco-site/
 │   └── server.js (Node.js)  → Gestion de la session de paiement
 │
 └── README.md                → Notes de projet
+
+
+
+
+
+
+
+
+
+
+SITE REMASTERRISÉ
+
+
+mwoibaco-site/
+│
+├── index.php            → Page d'accueil
+├── products.php         → Page Produits
+├── product.php          → Fiche Produit
+├── contact.php          → Page Contact
+├── about.php            → Page À propos
+├── cart.php             → Page Panier
+│
+├── menu.html            → Menu (inclus avec PHP)
+├── footer.html          → Footer (inclus avec PHP)
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css    → Feuille de style principale
+│   ├── js/
+│   │   └── main.js      → JavaScript pour les interactions
+│   └── img/             → Images (hero, produits, icônes)
+│
+└── send_message.php     → Script PHP pour envoyer les messages de contact

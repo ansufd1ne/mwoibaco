@@ -1,0 +1,57 @@
+<!-- Section d'en-tête (menu.html) -->
+<header class="navbar">
+    <div class="container">
+        <div class="navbar-logo">
+            <a href="index.php"><i class="fas fa-book"></i> Mwoibaco</a>
+        </div>
+        <nav class="navbar-menu">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="/index.php">Accueil</a></li>
+                <li><a href="/products.php">Planners</a></li>
+                <li><a href="/blog.php">Blogs</a></li>
+                <li><a href="/about.php">À propos</a></li>
+                <li><a href="/contact.php">Contact</a></li>
+                <li class="navbar-cart">
+                    <a href="/cart.php"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- JavaScript pour le menu toggle (mobile) -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélectionner les éléments nécessaires
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbarLinks = document.querySelector('.navbar-links');
+        
+        // Ajouter un événement click au bouton du menu burger
+        if (menuToggle && navbarLinks) {
+            menuToggle.addEventListener('click', function() {
+                // Basculer la classe 'active' pour afficher/masquer le menu
+                navbarLinks.classList.toggle('active');
+                
+                // Optionnel: Changer l'icône du menu burger (selon l'icône utilisée)
+                // Par exemple, si vous utilisez des icônes Font Awesome:
+                // if (this.innerHTML === '<i class="fas fa-bars"></i>') {
+                //    this.innerHTML = '<i class="fas fa-times"></i>';
+                // } else {
+                //    this.innerHTML = '<i class="fas fa-bars"></i>';
+                // }
+            });
+            
+            // Fermer le menu quand on clique sur un lien (optionnel)
+            const links = navbarLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    navbarLinks.classList.remove('active');
+                    // Rétablir également l'icône si nécessaire
+                });
+            });
+        }
+    });
+</script>

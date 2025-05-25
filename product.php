@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -64,62 +65,7 @@
         </div>
      </section>
 
-     <!-- Section de présentation footer -->
-     <section class="footer">
-        <div class="container">
-            <div class="footer-grid">
-
-                <!-- Colonne 1 : Marque -->
-                 <div class="footer-brand">
-                    <div class="logo"><i class="fas fa-book"></i> Mwoibaco</div>
-                    <p>Des planners numériques élégants pour étudiants, professionnels et entrepreneurs.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/mwoi_baco/"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@mwoibaco?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                 </div>
-
-                <!-- Colonne 2 : Produits -->
-                 <div class="footer-col">
-                    <h3>Produits</h3>
-                    <ul>
-                        <li><a href="products.html">Planners hebdomadaire</a></li>
-                        <li><a href="products.html">Planners mensuels</a></li>
-                        <li><a href="products.html">Planners étudiants</a></li>
-                        <li><a href="products.html">Planners à imprimer</a></li>
-                    </ul>
-                 </div>
-
-                <!-- Colonne 3 : Informations -->
-                <div class="footer-col">
-                    <h3>Informations</h3>
-                    <ul>
-                      <li><a href="#">À propos</a></li>
-                      <li><a href="#">Contact</a></li>
-                      <li><a href="#">FAQ</a></li>
-                      <li><a href="#">Blog</a></li>
-                    </ul>
-                  </div>
-   
-                <!-- Colonne 4 : Aide -->
-                <div class="footer-col">
-                    <h3>Légal</h3>
-                    <ul>
-                      <li><a href="#">Mentions légales</a></li>
-                      <li><a href="#">CGV</a></li>
-                      <li><a href="#">Politique de confidentialité</a></li>
-                    </ul>
-                  </div>
-            </div>
-
-        </div>
-
-        <div class="footer-botton">
-            <p>© 2025 Mwoibaco. Tous droits réservés.</p>
-        </div>
-     </section>
+     <?php include 'footer.html'; ?>
 
      <script>
         document.addEventListener('DOMContentLoaded', function() {

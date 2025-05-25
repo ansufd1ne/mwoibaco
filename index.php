@@ -5,32 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mwoibaco - Planners Numériques</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Section d'en-tête -->
-    <header class="navbar">
-        <div class="container">
-            <div class="navbar-logo">
-                <a href="index.html"><i class="fas fa-book"></i> Mwoibaco</a>
-            </div>
-            <nav class="navbar-menu">
-                <div class="menu-toggle" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="navbar-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="products.html">Planners</a></li>
-                    <li><a href="blog.html">Blogs</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="contact.html ">Contact</a></li>
-                    <li class="navbar-cart">
-                        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php include 'menu.html'; ?>
 
     <!-- Section principale d'introduction du site -->
     <section class="hero-section ">
@@ -48,8 +28,8 @@
     
                 <!-- Bouton d'appel à l'action -->
                  <div class="hero-button">
-                    <a href="products.html" class="btn btn-primary">Voir les planners</a>
-                    <a href="about.html" class="btn btn-secondary">En savoir plus</a>
+                    <a href="products.php" class="btn btn-primary">Voir les planners</a>
+                    <a href="about.php" class="btn btn-secondary">En savoir plus</a>
                  </div>
             </div>
     
@@ -128,7 +108,7 @@
                 <div class="products-info">
                     <h3>Planner Hebdomadaire</h3>
                     <p class="price">12,99 €</p>
-                    <a href="product.html" class="btn btn-primary">Voir en détail</a>
+                    <a href="product.php" class="btn btn-primary">Voir en détail</a>
                 </div>
              </div>
 
@@ -140,7 +120,7 @@
                 <div class="products-info">
                     <h3>Planner Mensuel</h3>
                     <p class="price">9,99 €</p>
-                    <a href="product.html" class="btn btn-primary">Voir en détail</a>
+                    <a href="product.php" class="btn btn-primary">Voir en détail</a>
                 </div>
              </div>
 
@@ -152,7 +132,7 @@
                 <div class="products-info">
                     <h3>Planner Étudiant</h3>
                     <p class="price">11,99 €</p>
-                    <a href="product.html" class="btn btn-primary">Voir en détail</a>
+                    <a href="product.php" class="btn btn-primary">Voir en détail</a>
                 </div>
              </div>
 
@@ -164,7 +144,7 @@
                 <div class="products-info">
                     <h3>Planner Quotidien</h3>
                     <p class="price">10,49 €</p>
-                    <a href="product.html" class="btn btn-primary">Voir en détail</a>
+                    <a href="product.php" class="btn btn-primary">Voir en détail</a>
                 </div>
              </div>
 
@@ -220,7 +200,7 @@
                         <span class="blog-date">12 mars 2025</span>
                         <h3>5 routines pour bien commencer la journnée</h3>
                         <p>Des conseils simples et pratiques pour démarrer ta journée avec énergie et clarté.</p>
-                        <a href="blog/article1.html" class="read-more">Lire plus →</a>
+                        <a href="blog/article1.php" class="read-more">Lire plus →</a>
                     </div>
                 </div>
 
@@ -233,7 +213,7 @@
                         <span class="blog-date">3 mars 2025</span>
                         <h3>Comment planifier sa semaine efficacement</h3>
                         <p>Une méthode simple et durable pour structurer tes semaines et atteindre tes objectifs.</p>
-                        <a href="blog/article1.html" class="read-more">Lire plus →</a>
+                        <a href="blog/article2.php" class="read-more">Lire plus →</a>
                     </div>
                 </div>
 
@@ -246,7 +226,7 @@
                         <span class="blog-date">25 février 2025</span>
                         <h3>Les erreurs à éviter en organisation personnelle</h3>
                         <p>Découvre les pièges classiques qui freinent ta productivité et comment les éviter.</p>
-                        <a href="blog/article1.html" class="read-more">Lire plus →</a>
+                        <a href="blog/article3.php" class="read-more">Lire plus →</a>
                     </div>
                 </div>
 
@@ -272,62 +252,7 @@
         </div>
      </section>
 
-    <!-- Section de présentation footer -->
-     <section class="footer">
-        <div class="container">
-            <div class="footer-grid">
-
-                <!-- Colonne 1 : Marque -->
-                 <div class="footer-brand">
-                    <div class="logo"><i class="fas fa-book"></i> Mwoibaco</div>
-                    <p>Des planners numériques élégants pour étudiants, professionnels et entrepreneurs.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/mwoi_baco/"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@mwoibaco?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                 </div>
-
-                <!-- Colonne 2 : Produits -->
-                 <div class="footer-col">
-                    <h3>Produits</h3>
-                    <ul>
-                        <li><a href="products.html">Planners hebdomadaire</a></li>
-                        <li><a href="products.html">Planners mensuels</a></li>
-                        <li><a href="products.html">Planners étudiants</a></li>
-                        <li><a href="products.html">Planners à imprimer</a></li>
-                    </ul>
-                 </div>
-
-                <!-- Colonne 3 : Informations -->
-                <div class="footer-col">
-                    <h3>Informations</h3>
-                    <ul>
-                      <li><a href="#">À propos</a></li>
-                      <li><a href="#">Contact</a></li>
-                      <li><a href="#">FAQ</a></li>
-                      <li><a href="#">Blog</a></li>
-                    </ul>
-                  </div>
-   
-                <!-- Colonne 4 : Aide -->
-                <div class="footer-col">
-                    <h3>Légal</h3>
-                    <ul>
-                      <li><a href="#">Mentions légales</a></li>
-                      <li><a href="#">CGV</a></li>
-                      <li><a href="#">Politique de confidentialité</a></li>
-                    </ul>
-                  </div>
-            </div>
-
-        </div>
-
-        <div class="footer-botton">
-            <p>© 2025 Mwoibaco. Tous droits réservés.</p>
-        </div>
-     </section>
+     <?php include 'footer.html'; ?>
 
      <script>
         document.addEventListener('DOMContentLoaded', function() {

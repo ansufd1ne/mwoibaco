@@ -1042,3 +1042,266 @@ body {
         margin-bottom: 1rem;
     }
 }
+
+
+
+ /* ===== SECTION CONTACT ===== */
+.contact-section {
+    padding: 4rem 1rem; /* Padding pour la section */
+    background-color: #f9fafb; /* Couleur de fond gris clair */
+    text-align: center; /* Centre le texte */
+}
+
+.contact-section h2 {
+    font-size: 2rem; /* Taille de police pour le titre */
+    font-weight: bold; /* Gras */
+    color: #1f2937; /* Couleur gris foncé */
+    margin-bottom: 2rem; /* Espace en bas */
+}
+
+.contact-section p {
+    font-size: 1rem; /* Taille de police pour le texte */
+    color: #4b5563; /* Couleur gris moyen */
+    margin-bottom: 2rem; /* Espace en bas */
+}
+
+.contact-grid {
+    display: flex; /* Affichage en flex */
+    gap: 2rem; /* Espace entre les colonnes */
+    max-width: 900px; /* Limite la largeur */
+    margin: 0 auto; /* Centre la grille */
+    flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne si nécessaire */
+}
+
+.contact-form {
+    flex: 1;
+    display: flex; /* Affichage en flex */
+    flex-direction: column; /* Colonne */
+    gap: 1rem; /* Espace entre les champs */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem; /* Padding pour les champs */
+    border: 1px solid #d1d5db; /* Bordure gris clair */
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 1rem; /* Taille de police pour les champs */
+}
+
+.contact-form button {
+    background-color: #7c3aed; /* Couleur violet */
+    color: #ffffff; /* Couleur du texte blanc */
+    font-size: 1rem; /* Taille de police pour le bouton */
+    padding: 0.75rem 1.25rem; /* Padding pour le bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 45px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.contact-form button:hover {
+    background-color: #ffffff; /* Couleur violet foncé au survol */
+}
+
+.contact-info {
+    flex: 1;
+    background-color: #ffffff; /* Fond blanc */
+    padding: 1.5rem; /* Padding pour le contenu */
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Ombre */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.contact-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem; /* Espace en bas */
+}
+
+.contact-info p {
+    font-size: 0.95rem; /* Taille de police pour le texte */
+    color: #374151; /* Couleur gris foncé */
+    margin-bottom: 0.5rem; /* Espace en bas */
+}
+
+.social-links {
+    display: flex; /* Affichage en flex */
+    gap: 1rem; /* Espace entre les icônes */
+    margin-top: 1rem; /* Espace en haut */
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #374151;
+    transform: color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.social-links a:hover {
+    color: #7c3aed; /* Couleur violet au survol */
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column; /* Colonne */
+        text-align: center; /* Centre le texte */
+    }
+
+    .contact-info {
+        margin-top: 2rem; /* Espace en haut */
+    }
+}
+
+
+/* ====== Page à propos ====== */
+
+.about-section {
+    padding: 4rem 1rem; /* Padding pour la section */
+    background-color: #ffffff; /* Couleur de fond blanc */
+    color: #1f2937; /* Couleur du texte gris foncé */
+    text-align: center; /* Centre le texte */
+}
+
+.about-section h1 {
+    font-size: 2rem; /* Taille de police pour le titre */
+    font-weight: bold; /* Gras */
+    margin-bottom: 1rem; /* Espace en bas */
+}
+
+.about-section .intro {
+    max-width: 700px; /* Limite la largeur de l'introduction */
+    gap: 2rem; /* Espace entre les éléments */
+    margin: 0 auto 2rem auto; /* Centre l'introduction */
+    font-size: 1.125rem; /* Taille de police pour le texte */
+    color: #4b5563; /* Couleur gris moyen */
+}
+
+.about-grid {
+    display: flex; /* Affichage en flex */
+    gap: 2rem; /* Espace entre les colonnes */
+    max-width: 1100px; /* Limite la largeur */
+    margin: 0 auto; /* Centre la grille */
+    align-items: center; /* Centre verticalement le contenu */
+    justify-content: center; /* Centre horizontalement le contenu */
+    flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne si nécessaire */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.about-text {
+    flex: 1; /* Prend toute la largeur disponible */
+    max-width: 300px; /* Limite la largeur du texte */
+}
+
+.about-text h2 {
+    font-size: 1.25rem; /* Taille de police pour le sous-titre */
+    margin-top: 1.5rem; /* Espace au-dessus du sous-titre */
+    margin-bottom: 0.5rem; /* Espace en bas */
+    color: #7c3aed;
+}
+
+.about-text ul {
+    list-style: none; /* Pas de puces */
+    padding-left: 0; /* Pas de padding */
+    color: #374151; /* Couleur gris foncé */
+}
+
+.about-text ul li {
+    margin-bottom: 0.5rem; /* Espace en bas */
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px; /* Largeur minimale pour l'image */
+    display: flex; /* Affichage en flex */
+    justify-content: center; /* Centre horizontalement l'image */
+}
+
+.about-image img {
+   max-width: 100%;
+   border-radius: 12px;
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Ombre */
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column; /* Colonne */
+        text-align: center; /* Centre le texte */
+    }
+
+    .about-text {
+        text-align: center; /* Centre le texte */
+    }
+}
+
+
+/* ====== Page des articles ====== */
+
+.blog-article {
+    padding: 4rem 1rem; /* Padding pour la section */
+    background-color: #f9fafb; /* Couleur de fond gris clair */
+    color: #1f2937; /* Couleur du texte gris foncé */
+}
+
+.article-container {
+    max-width: 800px;
+    margin: 2rem auto; /* Centre le conteneur */
+    padding: 1rem;
+    font-family: 'Inter', sans-serif; /* Police Inter */ 
+    color: #1f2937; /* Couleur du texte gris foncé */
+    line-height: 1.7; 
+}
+
+.article-container h1 {
+    font-size: 2rem; /* Taille de police pour le titre */
+    font-weight: bold; /* Gras */
+    margin-bottom: 1.5rem; /* Espace en bas */
+    color: #7c3aed; /* Couleur violet */
+}
+
+.article-container h2 {
+    font-size: 1.25rem; /* Taille de police pour les sous-titres */
+    margin-top: 1.5rem; /* Espace au-dessus du sous-titre */
+    color: #374151; /* Couleur gris foncé */
+}
+
+.article-container p {
+    margin: 1rem 0; /* Espace en haut et en bas */
+}
+
+.article-container .recap {
+    margin-top: 2rem; /* Espace au-dessus du récapitulatif */
+    padding: 1rem; /* Padding pour le récapitulatif */
+    background-color: #ede9fe; /* Fond violet pâle */
+    text-align: center; /* Centre le texte */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+.article-container .cta {
+    margin-top: 2rem; /* Espace au-dessus de l'appel à l'action */
+    text-align: center; /* Centre le texte */
+    padding: 1rem; /* Padding pour l'appel à l'action */
+    background-color: #ede9fe; /* Fond violet pâle */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+.article-container .cta a {
+    display: inline-block;
+    margin-top: 0.5rem; /* Espace au-dessus du lien */
+    background-color: #7c3aed; /* Couleur violet */
+    color: #ffffff; /* Couleur du texte blanc */
+    padding: 0.6rem 1.2rem; /* Padding pour le lien */
+    border-radius: 5px; /* Coins arrondis */
+    text-decoration: none; /* Pas de soulignement */
+    font-weight: 600; /* Gras */
+}
+
+.recap ul{
+    list-style: none; /* Pas de puces */
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .article-container {
+        padding: 1rem; /* Padding pour le conteneur */
+    }
+}

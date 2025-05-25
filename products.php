@@ -6,25 +6,26 @@
     <title>Nos Planners</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <header class="navbar">
         <div class="container">
             <div class="navbar-logo">
-                <a href="index.html"><i class="fas fa-book"></i> Mwoibaco</a>
+                <a href="index.php"><i class="fas fa-book"></i> Mwoibaco</a>
             </div>
             <nav class="navbar-menu">
                 <div class="menu-toggle" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul class="navbar-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="products.html">Planners</a></li>
-                    <li><a href="blog.html">Blogs</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="products.php">Planners</a></li>
+                    <li><a href="blog.php">Blogs</a></li>
+                    <li><a href="about.php">À propos</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li class="navbar-cart">
-                        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
             </nav>
@@ -45,7 +46,7 @@
                     <div class="products-info">
                         <h3>Planner Hebdomadaire</h3>
                         <p class="price">12,99 €</p>
-                        <a href="product.html" class="btn btn-primary">Voir Détail</a>
+                        <a href="product.php" class="btn btn-primary">Voir Détail</a>
                     </div>
                  </div>
 
@@ -55,7 +56,7 @@
                     <div class="products-info">
                         <h3>Planner Mensuel</h3>
                         <p class="price">9,99 €</p>
-                        <a href="product.html" class="btn btn-primary">Voir Détail</a>
+                        <a href="product.php" class="btn btn-primary">Voir Détail</a>
                     </div>
                  </div>
 
@@ -65,7 +66,7 @@
                     <div class="products-info">
                         <h3>Planner Étudiant</h3>
                         <p class="price">11,99 €</p>
-                        <a href="product.html" class="btn btn-primary">Voir Détail</a>
+                        <a href="product.php" class="btn btn-primary">Voir Détail</a>
                     </div>
                  </div>
 
@@ -75,69 +76,14 @@
                     <div class="products-info">
                         <h3>Planner Quotidient</h3>
                         <p class="price">10,99 €</p>
-                        <a href="product.html" class="btn btn-primary">Voir Détail</a>
+                        <a href="product.php" class="btn btn-primary">Voir Détail</a>
                     </div>
                  </div>
             </div>
         </div>
      </section>
 
-
-     <section class="footer">
-        <div class="container">
-            <div class="footer-grid">
-
-                <!-- Colonne 1 : Marque -->
-                 <div class="footer-brand">
-                    <div class="logo"><i class="fas fa-book"></i> Mwoibaco</div>
-                    <p>Des planners numériques élégants pour étudiants, professionnels et entrepreneurs.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/mwoi_baco/"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@mwoibaco?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                 </div>
-
-                <!-- Colonne 2 : Produits -->
-                 <div class="footer-col">
-                    <h3>Produits</h3>
-                    <ul>
-                        <li><a href="products.html">Planners hebdomadaire</a></li>
-                        <li><a href="products.html">Planners mensuels</a></li>
-                        <li><a href="products.html">Planners étudiants</a></li>
-                        <li><a href="products.html">Planners à imprimer</a></li>
-                    </ul>
-                 </div>
-
-                <!-- Colonne 3 : Informations -->
-                <div class="footer-col">
-                    <h3>Informations</h3>
-                    <ul>
-                      <li><a href="about.html">À propos</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                      <li><a href="faq.html">FAQ</a></li>
-                      <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                  </div>
-   
-                <!-- Colonne 4 : Aide -->
-                <div class="footer-col">
-                    <h3>Légal</h3>
-                    <ul>
-                      <li><a href="mension.html">Mentions légales</a></li>
-                      <li><a href="cvg.html">CGV</a></li>
-                      <li><a href="politique.html">Politique de confidentialité</a></li>
-                    </ul>
-                  </div>
-            </div>
-
-        </div>
-
-        <div class="footer-botton">
-            <p>© 2025 Mwoibaco. Tous droits réservés.</p>
-        </div>
-     </section>
+     <?php include 'footer.html'; ?>
 
      <script >
         document.addEventListener('DOMContentLoaded', function() {
